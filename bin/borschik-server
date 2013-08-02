@@ -1,0 +1,27 @@
+#!/usr/bin/env node
+
+require('coa').Cmd()
+    .name(process.argv[1])
+    .title('Borschik-server. Creates http server and builds files on demand.')
+    .helpful()
+    .opt()
+        .name('version') .title('Version')
+        .short('v').long('version')
+        .flag()
+        .only()
+        .act(function() { return JSON.parse(require('fs').readFileSync(require('path').resolve(__dirname, '..', 'package.json'))).version })
+        .end()
+    .opt()
+        .name('port').title('Port to listen. Default is 8055')
+        .short('p').long('port')
+        .def(8055)
+        .val(function(v) {
+            var port = parseInt(v);
+            return isNaN(port) ? 8055 : port;
+        })
+        .end()
+    .act(function(opts) {
+        require('..').server(opts);
+    })
+    .run();
+

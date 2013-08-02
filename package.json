@@ -1,0 +1,29 @@
+{
+    "name": "borschik-server",
+    "version": "0.0.1",
+    "description": "Borschik dev server to build files on demand",
+    "author": [
+        {
+            "name": "Alexey Ten (Lynn)",
+            "email": "alexeyten@gmail.com"
+        },
+        {
+            "name": "Alexey Androsov",
+            "email": "doochik@ya.ru"
+        }
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git://github.yandex-team.ru/aandrosov/borschik-server.git"
+    },
+    "dependencies": {
+        "coa": "0.4.0",
+        "vow": "0.3.9",
+        "vow-fs": "0.2.2",
+        "borschik": "0.3.5"
+    },
+    "main": "index.js",
+    "bin": {
+        "borschik-server": "./bin/borschik-server"
+    }
+}
