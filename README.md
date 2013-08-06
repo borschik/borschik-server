@@ -1,6 +1,18 @@
 # borschik-server
 HTTP server to processes JS and CSS files with borschik on demand.
 
+## Default behavour
+1. If file exists, response as is
+2. Process files with `_` prefix only (can be redefined in `path-resolver`)
+3. Minimize is disabled
+4. Freeze is disabled
+
+Some examples:
+ 1. You request is `http://example.com/js/file.js`. `file.js` exists, `borschik-server` reads this file
+and writes to output as is.
+ 2. You request is `http://example.com/js/_file.js`. `file.js` doesn't exist, `borschik-server` removes `_` prefix,
+reads file `file.js` and processes it with `borschik`.
+
 ## How to extend with new technologies
 You can create you own server with this code
 ```js
