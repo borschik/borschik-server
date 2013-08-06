@@ -1,5 +1,7 @@
 # borschik-server
-HTTP server to processes JS and CSS files with borschik on demand.
+HTTP server to processes JS and CSS files with [borschik](https://github.com/bem/borschik) on demand.
+
+This server is **for development use only**.
 
 ## Default behavour
 1. If file exists, response as is
@@ -52,12 +54,13 @@ exports.getTech = function(extension) {
 You can redefine pathResolver as well.
 
 ## Configuration
-You should proxy http request for static files to borschik-server
+You should setup your webserver (apache, lighttpd, nginx) to proxy http requests for static files to borschik-server.
 
 Example nginx configuration:
 ```
 location ~* "\.(css|js)$" {
     # proxy all requests for css/js to borschik-server
-    proxy_pass http://127.0.0.1:8055$document_root$request_uri;
+    # use $uri (not $request_uri) to deal with rewrite
+    proxy_pass http://127.0.0.1:8055$document_root$uri;
 }
 ```
