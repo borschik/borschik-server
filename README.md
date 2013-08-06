@@ -64,3 +64,6 @@ location ~* "\.(css|js)$" {
     proxy_pass http://127.0.0.1:8055$document_root$uri;
 }
 ```
+
+## License
+[MIT](/MIT-LICENSE.txt)
