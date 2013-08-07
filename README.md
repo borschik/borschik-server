@@ -15,6 +15,29 @@ and writes to output as is.
  2. You request is `http://example.com/js/_file.js`. `file.js` doesn't exist, `borschik-server` removes `_` prefix,
 reads file `file.js` and processes it with `borschik`.
 
+
+## Installation
+```
+npm install -g borschik-server 
+```
+
+## Usage
+Just run `borschik-server` and setup your webserver. If you want to use borschik-server as init.d script
+follow [this template for Ubuntu](https://gist.github.com/peterhost/715255)
+
+## Webserver configuration
+You should setup your webserver (apache, lighttpd, nginx, etc.) to proxy http requests for static files to borschik-server.
+
+Example nginx configuration:
+```
+location ~* "\.(css|js)$" {
+    # proxy all requests for css/js to borschik-server
+    # use $uri (not $request_uri) to deal with rewrite
+    proxy_pass http://127.0.0.1:8055$document_root$uri;
+}
+```
+
+
 ## How to extend with new technologies
 You can create you own server with this code
 ```js
@@ -52,18 +75,6 @@ exports.getTech = function(extension) {
 ```
 
 You can redefine pathResolver as well.
-
-## Configuration
-You should setup your webserver (apache, lighttpd, nginx) to proxy http requests for static files to borschik-server.
-
-Example nginx configuration:
-```
-location ~* "\.(css|js)$" {
-    # proxy all requests for css/js to borschik-server
-    # use $uri (not $request_uri) to deal with rewrite
-    proxy_pass http://127.0.0.1:8055$document_root$uri;
-}
-```
 
 ## License
 [MIT](/MIT-LICENSE.txt)
