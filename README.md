@@ -1,4 +1,7 @@
 # borschik-server
+[![NPM version](https://badge.fury.io/js/borschik-server.png)](http://badge.fury.io/js/borschik-server)
+[![Dependency Status](https://david-dm.org/bem/borschik-server.png)](https://david-dm.org/bem/borschik-server)
+
 HTTP server to processes JS and CSS files with [borschik](https://github.com/bem/borschik) on demand.
 
 This server is **for development use only**.
