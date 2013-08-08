@@ -3,7 +3,11 @@ describe('tech-resolver:', function() {
     var expect = require('chai').expect;
 
     beforeEach(function() {
-        this.techResolver = require('../lib/tech-resolver');
+        var techResolver = require('path').resolve(__dirname, '../lib/tech-resolver.js');
+        // clear path resolver cache
+        delete require.cache[techResolver];
+
+        this.techResolver = require(techResolver);
     });
 
     afterEach(function() {

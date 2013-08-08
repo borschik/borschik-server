@@ -4,7 +4,11 @@ describe('path-resolver:', function() {
     var path = require('path');
 
     beforeEach(function() {
-        this.pathResolver = require('../lib/path-resolver');
+        var pathResolverPath = path.resolve(__dirname, '../lib/path-resolver.js');
+        // clear path resolver cache
+        delete require.cache[pathResolverPath];
+
+        this.pathResolver = require(pathResolverPath);
     });
 
     afterEach(function() {

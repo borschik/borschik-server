@@ -3,6 +3,10 @@ describe('tech-resolver extending:', function() {
     var expect = require('chai').expect;
 
     beforeEach(function() {
+        var techResolver = require('path').resolve(__dirname, '../lib/tech-resolver.js');
+        // clear path resolver cache
+        delete require.cache[techResolver];
+
         this.techResolver = require('./mock/custom-tech-resolver');
     });
 
