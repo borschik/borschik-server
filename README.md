@@ -51,34 +51,10 @@ require('borschik-server').server({
 });
 ```
 
-This code references to you own tech-resolver
-```js
-const ext2tech = {
-    '.styl': {
-        module: require('path').resolve(__dirname, '../processors/my-styl-processor'),
-        contentType: 'text/css; charset=utf-8'
-    }
-};
+This code references to you own tech-resolver.
+You can find example in [unit tests](./test/mock/custom-tech-resolver.js). In this example we add support for new ".styl" tech.
 
-var borschikServerTechResolver = require('borschik-server').techResolver;
-
-// save techResolver interface
-exports = borschikServerTechResolver;
-
-// redefine getTech method
-exports.getTech = function(extension) {
-    var tech = ext2tech[extension];
-
-    // go to borschik-server techs
-    if (!tech) {
-        return borschikServerTechResolver.getTech(extension);
-    }
-
-    return tech
-};
-```
-
-You can redefine pathResolver as well.
+You can redefine pathResolver as well. [Example](./test/mock/custom-path-resolver.js). In this example we define builed files as `file.min.js`.
 
 ## License
 [MIT](/MIT-LICENSE.txt)
