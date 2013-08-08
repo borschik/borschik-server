@@ -51,7 +51,6 @@ describe('path-resolver:', function() {
                     } catch(e) {
                         done(e);
                     }
-
                 });
         });
 
@@ -74,6 +73,52 @@ describe('path-resolver:', function() {
     });
 
     describe('resolve: ', function() {
+
+        it('should resolve with shouldProcess === false if file exists', function(done) {
+            this.pathResolver
+                .resolve(path.resolve(__dirname, 'test.path-resolver.js'))
+                .then(function(msg) {
+                    try {
+                        expect(msg.shouldProcess).to.be.equal(false);
+                        done();
+                    } catch(e) {
+                        done(e);
+                    }
+                }, function(msg) {
+                    done(msg);
+                });
+        });
+
+        it('should resolve with shouldProcess === true for _file.js', function(done) {
+            this.pathResolver
+                .resolve(path.resolve(__dirname, '_test.path-resolver.js'))
+                .then(function(msg) {
+                    try {
+                        expect(msg.shouldProcess).to.be.equal(true);
+                        done();
+                    } catch(e) {
+                        done(e);
+                    }
+                }, function(msg) {
+                    done(msg);
+                });
+        });
+
+        it('should reject for _file.js if file.js doens\'t exists', function(done) {
+            this.pathResolver
+                .resolve(path.resolve(__dirname, '_test.path-resolver.js1'))
+                .then(function(msg) {
+                    done(msg);
+
+                }, function(msg) {
+                    try {
+                        expect(msg.code).to.be.equal('NOT_EXISTS');
+                        done();
+                    } catch(e) {
+                        done(e);
+                    }
+                });
+        });
 
     });
 
