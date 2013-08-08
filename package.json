@@ -1,6 +1,6 @@
 {
     "name": "borschik-server",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Dev HTTP server to process JS and CSS files with borschik",
     "homepage": "https://github.com/bem/borschik-server",
     "author": [
