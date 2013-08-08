@@ -1,0 +1,14 @@
+{
+    "node": true,
+    "predef": ["afterEach", "beforeEach", "describe", "it"],
+
+    "bitwise": true,
+    "eqeqeq": true,
+    "esnext": true,
+    "forin": true,
+    "immed": true,
+    "indent": 4,
+    "noarg": true,
+    "undef": true,
+    "unused": true
+}

@@ -39,7 +39,7 @@ describe('tech-resolver:', function() {
         });
 
         it('should return undefined for unknown tech', function() {
-            expect(this.techResolver.getTech('.unknown')).to.be.undefined;
+            expect(this.techResolver.getTech('.unknown')).to.be.an('undefined');
         });
 
     });

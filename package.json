@@ -25,6 +25,7 @@
     },
     "devDependencies": {
         "chai": "*",
+        "jshint": "*",
         "mocha": "*"
     },
     "engines": [
@@ -38,6 +39,6 @@
         { "type": "MIT" }
     ],
     "scripts": {
-        "test" : "./node_modules/.bin/mocha -u bdd -R spec"
+        "test" : "./node_modules/.bin/jshint . && ./node_modules/.bin/mocha -u bdd -R spec"
     }
 }

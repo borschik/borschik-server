@@ -19,7 +19,7 @@ techResolver.getTech = function(extension) {
         return module.exports._getTech(extension);
     }
 
-    return tech
+    return tech;
 };
 
 module.exports = techResolver;
