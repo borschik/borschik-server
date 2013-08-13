@@ -3,7 +3,7 @@
 [![NPM version](https://badge.fury.io/js/borschik-server.png)](http://badge.fury.io/js/borschik-server)
 [![Dependency Status](https://david-dm.org/bem/borschik-server.png)](https://david-dm.org/bem/borschik-server)
 
-HTTP server to processes JS and CSS files with [borschik](https://github.com/bem/borschik) on demand.
+HTTP server to process JS and CSS files with [borschik](https://github.com/bem/borschik) on demand.
 
 This server is **for development use only**.
 
@@ -14,9 +14,9 @@ This server is **for development use only**.
 4. Freeze is disabled
 
 Some examples:
- 1. You request is `http://example.com/js/file.js`. `file.js` exists, `borschik-server` reads this file
+ 1. Your request is `http://example.com/js/file.js`. `file.js` exists, `borschik-server` reads this file
 and writes to output as is.
- 2. You request is `http://example.com/js/_file.js`. `file.js` doesn't exist, `borschik-server` removes `_` prefix,
+ 2. Your request is `http://example.com/js/_file.js`. `file.js` doesn't exist, `borschik-server` removes `_` prefix,
 reads file `file.js` and processes it with `borschik`.
 
 
@@ -26,13 +26,13 @@ npm install -g borschik-server
 ```
 
 ## Usage
-Just run `borschik-server` and setup your webserver. If you want to use borschik-server as init.d script
+Just run `borschik-server` and setup your webserver. If you want to use borschik-server as init.d script,
 follow [this template for Ubuntu](https://gist.github.com/peterhost/715255)
 
 ## Webserver configuration
 You should setup your webserver (apache, lighttpd, nginx, etc.) to proxy http requests for static files to borschik-server.
 
-Example nginx configuration:
+Example of nginx configuration:
 ```
 location ~* "\.(css|js)$" {
     # proxy all requests for css/js to borschik-server
@@ -51,10 +51,10 @@ require('borschik-server').server({
 });
 ```
 
-This code references to you own tech-resolver.
+This code references to your own tech-resolver.
 You can find example in [unit tests](./test/mock/custom-tech-resolver.js). In this example we add support for new ".styl" tech.
 
-You can redefine pathResolver as well. [Example](./test/mock/custom-path-resolver.js). In this example we define builed files as `file.min.js`.
+You can redefine pathResolver as well. [Example](./test/mock/custom-path-resolver.js). In this example we define built files as `file.min.js`.
 
 ## License
 [MIT](/MIT-LICENSE.txt)
