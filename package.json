@@ -1,6 +1,6 @@
 {
     "name": "borschik-server",
-    "version": "0.0.3-beta1",
+    "version": "0.0.3",
     "description": "Dev HTTP server to process JS and CSS files with borschik",
     "homepage": "https://github.com/bem/borschik-server",
     "author": [
@@ -21,7 +21,7 @@
         "coa": "0.4.0",
         "vow": "0.3.9",
         "vow-fs": "0.2.3",
-        "borschik": "0.4.x"
+        "borschik": "0.4.0"
     },
     "devDependencies": {
         "chai": "*",
@@ -40,8 +40,5 @@
     ],
     "scripts": {
         "test" : "jshint . && mocha -u bdd -R spec"
-    },
-    "publishConfig": {
-        "tag": "unstable"
     }
 }
