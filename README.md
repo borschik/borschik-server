@@ -3,21 +3,20 @@
 [![NPM version](https://badge.fury.io/js/borschik-server.png)](http://badge.fury.io/js/borschik-server)
 [![Dependency Status](https://david-dm.org/bem/borschik-server.png)](https://david-dm.org/bem/borschik-server)
 
-HTTP server to process JS and CSS files with [borschik](https://github.com/bem/borschik) on demand.
+An HTTP server to process JS and CSS files with [borschik](https://github.com/bem/borschik) on demand.
 
 This server is **for development use only**.
 
 ## Default behavour
-1. If file exists, response as is
+1. If file exists, respond with the file as is
 2. Process files with `_` prefix only (can be redefined in `path-resolver`)
 3. Minimize is disabled
 4. Freeze is disabled
 
 Some examples:
- 1. Your request is `http://example.com/js/file.js`. `file.js` exists, `borschik-server` reads this file
-and writes to output as is.
- 2. Your request is `http://example.com/js/_file.js`. `file.js` doesn't exist, `borschik-server` removes `_` prefix,
-reads file `file.js` and processes it with `borschik`.
+ 1. Your request is `http://example.com/js/file.js`. `file.js` exists, so `borschik-server` reads the file
+and writes it to the output as is.
+ 2. Your request is `http://example.com/js/_file.js`. `file.js` doesn't exist, but `borschik-server` removes the `_` prefix, reads file `file.js` and processes it with `borschik`.
 
 
 ## Installation
@@ -26,11 +25,11 @@ npm install -g borschik-server
 ```
 
 ## Usage
-Just run `borschik-server` and setup your webserver. If you want to use borschik-server as init.d script,
+Just run `borschik-server` and set up your webserver. If you want to use borschik-server as an init.d script,
 follow [this template for Ubuntu](https://gist.github.com/peterhost/715255)
 
 ## Webserver configuration
-You should setup your webserver (apache, lighttpd, nginx, etc.) to proxy http requests for static files to borschik-server.
+You should set up your webserver (apache, lighttpd, nginx, etc.) to proxy http requests for static files to borschik-server.
 
 Example of nginx configuration:
 ```
@@ -51,10 +50,10 @@ require('borschik-server').server({
 });
 ```
 
-This code references to your own tech-resolver.
-You can find example in [unit tests](./test/mock/custom-tech-resolver.js). In this example we add support for new ".styl" tech.
+This code references your own tech-resolver.
+You can find an example in the [unit tests](./test/mock/custom-tech-resolver.js). In this example we add support for a new ".styl" technology.
 
-You can redefine pathResolver as well. [Example](./test/mock/custom-path-resolver.js). In this example we define built files as `file.min.js`.
+You can redefine pathResolver as well. In our [example](./test/mock/custom-path-resolver.js) we define built files as `file.min.js`.
 
 ## License
 [MIT](/MIT-LICENSE.txt)
