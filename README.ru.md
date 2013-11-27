@@ -51,11 +51,11 @@ require('borschik-server').server({
 ```
 
 Этот код испльзует ваш собственный tech-resolver.
-Вы можете найти пример в [юнит-тестах](./test/mock/custom-tech-resolver.js). В этом примере мы добавили поддержку 
+Вы можете найти пример в [юнит-тестах](https://github.com/bem/borschik-server/blob/master/test/mock/custom-tech-resolver.js). В этом примере мы добавили поддержку 
 новой `.styl` технологии.
 
-Кроме того, вы можете переопределить pathResolver. [Пример](./test/mock/custom-path-resolver.js). В этом примере мы 
+Кроме того, вы можете переопределить pathResolver. [Пример](https://github.com/bem/borschik-server/blob/master/test/mock/custom-path-resolver.js). В этом примере мы 
 определяем собранные файлы как `file.min.js`.
 
 ## Лицензия
-[MIT](/MIT-LICENSE.txt)
+[MIT](https://github.com/bem/borschik-server/blob/master/MIT-LICENSE.txt)
