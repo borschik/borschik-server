@@ -1,3 +1,17 @@
+<!--
+{
+    "title": "borschik-server",
+    "createDate": "02-08-2013",
+    "editDate": "19-08-2013",
+    "summary": "Short description of borschik-server.",
+    "thumbnail": "",
+    "authors": ["androsov-alexey"],
+    "tags": ["tools", "borschik"],
+    "translators": [],
+    "type": "tools"
+} 
+#META_LABEL-->
+
 # borschik-server
 [![Build Status](https://travis-ci.org/bem/borschik-server.png?branch=master)](https://travis-ci.org/bem/borschik-server)
 [![NPM version](https://badge.fury.io/js/borschik-server.png)](http://badge.fury.io/js/borschik-server)
