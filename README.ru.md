@@ -50,7 +50,7 @@ require('borschik-server').server({
 });
 ```
 
-Этот код испльзует ваш собственный tech-resolver.
+Этот код использует ваш собственный tech-resolver.
 Вы можете найти пример в [юнит-тестах](https://github.com/bem/borschik-server/blob/master/test/mock/custom-tech-resolver.js). В этом примере мы добавили поддержку 
 новой `.styl` технологии.
 
