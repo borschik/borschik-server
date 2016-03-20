@@ -2,7 +2,7 @@
     "name": "borschik-server",
     "version": "0.0.3",
     "description": "Dev HTTP server to process JS and CSS files with borschik",
-    "homepage": "https://github.com/bem/borschik-server",
+    "homepage": "https://github.com/borschik/borschik-server",
     "author": [
         {
             "name": "Alexey Ten (Lynn)",
@@ -15,7 +15,7 @@
     ],
     "repository": {
         "type": "git",
-        "url": "git://github.com/bem/borschik-server.git"
+        "url": "git://github.com/borschik/borschik-server.git"
     },
     "dependencies": {
         "coa": "0.4.0",

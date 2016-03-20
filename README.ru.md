@@ -1,9 +1,9 @@
 # borschik-server
-[![Build Status](https://travis-ci.org/bem/borschik-server.png?branch=master)](https://travis-ci.org/bem/borschik-server)
+[![Build Status](https://travis-ci.org/borschik/borschik-server.png?branch=master)](https://travis-ci.org/borschik/borschik-server)
 [![NPM version](https://badge.fury.io/js/borschik-server.png)](http://badge.fury.io/js/borschik-server)
-[![Dependency Status](https://david-dm.org/bem/borschik-server.png)](https://david-dm.org/bem/borschik-server)
+[![Dependency Status](https://david-dm.org/borschik/borschik-server.png)](https://david-dm.org/borschik/borschik-server)
 
-HTTP-сервер для обработки JS и CSS файлов утилитой [borschik](https://github.com/bem/borschik) по запросу.
+HTTP-сервер для обработки JS и CSS файлов утилитой [borschik](https://github.com/borschik/borschik) по запросу.
 
 Это сервер **сугубо для разработки**.
 
@@ -14,22 +14,22 @@ HTTP-сервер для обработки JS и CSS файлов утилит�
 4. Заморозка (фриз) отключена
 
 Несколько примеров:
- 1. Запрос `http://example.com/js/file.js`. `file.js` существует, `borschik-server` считывает этот файл 
+ 1. Запрос `http://example.com/js/file.js`. `file.js` существует, `borschik-server` считывает этот файл
 и возвращает его.
  2. Запрос `http://example.com/js/_file.js`. `file.js` не существует, `borschik-server` отбрасывает префикс `_`,
 считывает файл `file.js` и обрабатывает его с помощью `borschik`.
 
 ## Установка
 ```
-npm install -g borschik-server 
+npm install -g borschik-server
 ```
 
 ## Использование
-Просто запустите `borschik-server` и настройте свой веб-сервер. Если вы хотите использовать borschik-server как 
+Просто запустите `borschik-server` и настройте свой веб-сервер. Если вы хотите использовать borschik-server как
 init.d-скрипт, используйте [этот шаблон для Ubuntu](https://gist.github.com/peterhost/715255)
 
 ## Конфигурация веб-сервера
-Вы должны настроить проксирование http-запросов за статикой на своем веб-сервере (apache, lighttpd, nginx и т.д.) на 
+Вы должны настроить проксирование http-запросов за статикой на своем веб-сервере (apache, lighttpd, nginx и т.д.) на
 borschik-server.
 
 Пример конфигурации nginx:
@@ -51,11 +51,11 @@ require('borschik-server').server({
 ```
 
 Этот код использует ваш собственный tech-resolver.
-Вы можете найти пример в [юнит-тестах](https://github.com/bem/borschik-server/blob/master/test/mock/custom-tech-resolver.js). В этом примере мы добавили поддержку 
+Вы можете найти пример в [юнит-тестах](https://github.com/borschik/borschik-server/blob/master/test/mock/custom-tech-resolver.js). В этом примере мы добавили поддержку
 новой `.styl` технологии.
 
-Кроме того, вы можете переопределить pathResolver. [Пример](https://github.com/bem/borschik-server/blob/master/test/mock/custom-path-resolver.js). В этом примере мы 
+Кроме того, вы можете переопределить pathResolver. [Пример](https://github.com/borschik/borschik-server/blob/master/test/mock/custom-path-resolver.js). В этом примере мы
 определяем собранные файлы как `file.min.js`.
 
 ## Лицензия
-[MIT](https://github.com/bem/borschik-server/blob/master/MIT-LICENSE.txt)
+[MIT](https://github.com/borschik/borschik-server/blob/master/MIT-LICENSE.txt)

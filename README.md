@@ -1,9 +1,9 @@
 # borschik-server
-[![Build Status](https://travis-ci.org/bem/borschik-server.png?branch=master)](https://travis-ci.org/bem/borschik-server)
+[![Build Status](https://travis-ci.org/borschik/borschik-server.png?branch=master)](https://travis-ci.org/borschik/borschik-server)
 [![NPM version](https://badge.fury.io/js/borschik-server.png)](http://badge.fury.io/js/borschik-server)
-[![Dependency Status](https://david-dm.org/bem/borschik-server.png)](https://david-dm.org/bem/borschik-server)
+[![Dependency Status](https://david-dm.org/borschik/borschik-server.png)](https://david-dm.org/borschik/borschik-server)
 
-An HTTP server to process JS and CSS files with [borschik](https://github.com/bem/borschik) on demand.
+An HTTP server to process JS and CSS files with [borschik](https://github.com/borschik/borschik) on demand.
 
 This server is **for development use only**.
 
@@ -21,7 +21,7 @@ and writes it to the output as is.
 
 ## Installation
 ```
-npm install -g borschik-server 
+npm install -g borschik-server
 ```
 
 ## Usage
@@ -51,9 +51,9 @@ require('borschik-server').server({
 ```
 
 This code references your own tech-resolver.
-You can find an example in the [unit tests](https://github.com/bem/borschik-server/blob/master/test/mock/custom-tech-resolver.js). In this example we add support for a new ".styl" technology.
+You can find an example in the [unit tests](https://github.com/borschik/borschik-server/blob/master/test/mock/custom-tech-resolver.js). In this example we add support for a new ".styl" technology.
 
-You can redefine pathResolver as well. In our [example](https://github.com/bem/borschik-server/blob/master/test/mock/custom-path-resolver.js) we define built files as `file.min.js`.
+You can redefine pathResolver as well. In our [example](https://github.com/borschik/borschik-server/blob/master/test/mock/custom-path-resolver.js) we define built files as `file.min.js`.
 
 ## License
-[MIT](https://github.com/bem/borschik-server/blob/master/MIT-LICENSE.txt)
+[MIT](https://github.com/borschik/borschik-server/blob/master/MIT-LICENSE.txt)
